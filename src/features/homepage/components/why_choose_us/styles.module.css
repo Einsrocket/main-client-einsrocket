@@ -1,0 +1,62 @@
+.why_choose {
+    width: 100%;
+    margin-top: 150px;
+    padding: 0 5%;
+}
+
+.why_choose h1{
+    color: var(--foreground-primary);
+    text-align: center;
+    font-size: 3.2rem;
+    padding: 0 7%;
+}
+
+
+.why_choose .why_choose_row{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+.why_choose .why_choose_row div{
+    width: 400px;
+    margin-right: 54px;
+    margin-top: 24px;
+}
+.why_choose .why_choose_row div span{
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin: 14px 0;
+    display: block;
+    color: var(--foreground-secondary);
+}
+.why_choose .why_choose_row div p{
+    font-size: .9rem;
+    color: var(--foreground-tertiary);
+}
+
+@media (max-width: 1025px){
+    .why_choose .why_choose_row div{
+        width: 300px;
+    }
+}
+@media (max-width: 790px){
+    .why_choose .why_choose_row div{
+        width: 200px;
+    }
+    .why_choose h1{
+        font-size: 5vw;
+    }
+    .why_choose .why_choose_row{
+        margin-top: 20px;
+    }
+}
+@media (max-width: 570px){
+    .why_choose .why_choose_row div{
+        width: 100%;
+    }
+    .why_choose h1{
+        font-size: 6vw;
+    }
+}

@@ -1,0 +1,184 @@
+.dashboard {
+    width: 100%;
+    padding-bottom: 100px;
+}
+
+.dashboard .dashboard_welcome{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 60px;
+    flex-wrap: wrap;
+    padding: 0 5%;
+}
+.dashboard .dashboard_welcome div{
+    display: flex;
+    align-items: center;
+}
+.dashboard .dashboard_welcome strong{
+    font-size: 2rem;
+    margin-right: 50px;
+    color: var(--foreground-secondary);
+}
+.dashboard .dashboard_welcome p{
+    color: var(--foreground-secondary);
+}
+.dashboard .dashboard_welcome span{
+    font-size: .9rem;
+    color: var(--foreground-tertiary);
+    opacity: .9;
+}
+
+
+
+.dashboard_row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 0 5%;
+    width: 100%;
+    margin-top: 80px;
+}
+
+.dashboard_row .dashboard_left{
+    flex-basis: 47%;
+    background: var(--action-tertiary);
+    border-radius: 5px;
+    margin-right: 50px;
+    padding-bottom: 50px;
+}
+.dashboard_row .dashboard_left .dashboard_left_content{
+    width: 100%;
+    display: flex; 
+    justify-content: center;
+    justify-content: flex-start;
+    padding: 5%;
+}
+.dashboard_row .dashboard_left .dashboard_left_content span{
+    width: 110px;
+    height: 110px;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    background: var(--violet);
+    border-radius: 50%;
+    outline: 1px solid var(--foreground-tertiary);
+    border: 2px solid var(--action-tertiary);
+    color: var(--foreground-primary);
+    font-size: 1.5rem;
+    font-weight: 500;
+    flex-shrink: 0;
+    margin-right: 40px;
+}
+.dashboard_row .dashboard_left .dashboard_left_content .dashboard_left_view_profile{
+    align-self: center;
+}
+.dashboard_row .dashboard_left .dashboard_left_content small{
+    display: block;
+    font-weight: 600;
+    font-size:1.5rem;
+    color: var(--foreground-primary);
+    margin-bottom: 28px;
+}
+.dashboard_row .dashboard_left .dashboard_left_content a{
+    display: block;
+    font-size:.9rem;
+    color: var(--foreground-primary);
+    background: var(--violet);
+    padding: 15px 30px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.dashboard_row .dashboard_left .dashboard_left_content a:hover{
+    opacity: .9;
+}
+
+
+.dashboard_row .dashboard_left .dashboard_left_profile_level{
+    border-top: 2px solid var(--background-secondary);
+    margin-top: 20px;
+    padding: 0 5%;
+}
+.dashboard_row .dashboard_left .dashboard_left_profile_level p{
+    margin-top: 20px;
+    color: var(--foreground-secondary);
+}
+.dashboard_row .dashboard_left .dashboard_left_profile_level .line{
+    margin-top: 20px;
+    background: var(--violet-hover);
+    width: 100%;
+    height: 8px;
+    border-radius: 3px;
+    position: relative;
+}
+.dashboard_row .dashboard_left .dashboard_left_profile_level .line div{
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--green-primary-dark);
+    width: 30%;
+    height: 100%;
+    position: relative;
+}
+
+
+
+
+
+.dashboard_row .dashboard_right{
+    cursor: pointer;
+    flex-basis: 47%;
+    border-radius: 8px;
+}
+.dashboard_row .dashboard_right img{
+    border-radius: 8px;
+    width: 100%;
+}
+
+
+
+
+
+/* @media (max-width: 940px){
+    .dashboard_row .dashboard_left,
+    .dashboard_row .dashboard_rght{
+        flex-basis: 40%;
+    }
+} */
+@media (max-width: 970px){
+    .dashboard_row .dashboard_left,
+    .dashboard_row .dashboard_rght{
+        flex-basis: 100%;
+        margin-bottom: 50px;
+        margin-right: 0;
+    }
+    .dashboard_row .dashboard_right{
+        flex-basis: 60%;
+    }
+}
+@media (max-width: 780px){
+    .dashboard .dashboard_welcome div{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+@media (max-width: 500px){
+    .dashboard_row .dashboard_left .dashboard_left_content small{
+        font-size: 1.2rem;
+    }
+    .dashboard_row .dashboard_left .dashboard_left_content a{
+        font-size: .8rem;
+        padding: 14px;
+    }
+    .dashboard_row .dashboard_right{
+        flex-basis: 100%;
+    }
+}
+@media (max-width: 380px){
+    .dashboard_row .dashboard_left .dashboard_left_content span{
+        margin-right: 14px;
+    }
+}

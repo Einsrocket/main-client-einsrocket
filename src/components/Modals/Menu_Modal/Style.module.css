@@ -1,0 +1,54 @@
+.Menu_Modal {
+    position: absolute;
+    top: 90px;
+    right: 5%;
+    width: 300px;
+    z-index: 10;
+    background: var(--action-tertiary);
+    border-radius: 5px;
+}
+
+
+.Menu_Modal .Menu_Modal_account_links strong{
+    margin: 0 10px;
+    margin-top: 10px ;
+    display: block;
+    font-size: 1.2rem;
+    color: var(--gray);
+    font-weight: 500;
+}
+.Menu_Modal .Menu_Modal_account_links a{
+    text-decoration: none;
+    color: var(--foreground-secondary);
+    margin: 18px;
+    font-size: .9rem;
+    display: flex;
+    align-items: center;
+}
+.Menu_Modal .Menu_Modal_account_links a:hover{
+    color: var(--violet);
+}
+.Menu_Modal .Menu_Modal_account_links a svg{
+    margin-right: 5px;
+}
+.Menu_Modal .Menu_Modal_account_links span svg{
+    margin-right: 5px;
+}
+.Menu_Modal .Menu_Modal_account_links span{
+    cursor: pointer;
+    margin: 18px;
+    font-size: .9rem;
+    display: flex;
+    align-items: center;
+    color: var(--foreground-secondary);
+}
+.Menu_Modal .Menu_Modal_account_links span:hover{
+    color: var(--violet);
+}
+
+
+@media (max-width: 500px){
+    .Menu_Modal {
+        display: none;
+    }
+}

@@ -1,0 +1,191 @@
+.discover {
+    width: 100%;
+    padding-bottom: 100px;
+}
+
+.discover .discover_welcome{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 60px;
+    flex-wrap: wrap;
+    padding: 1.5% 5%;
+    padding-bottom: 2.3%;
+    border-bottom: 1px solid var(--outline);
+}
+.discover .discover_welcome .discover_welcome_co{
+    width: 40px;
+    height: 40px;
+    background: rgba(138, 193, 255, .5);
+    border-radius: 50%;
+    margin-right: 8px;
+}
+.discover .discover_welcome .discover_welcome_ct{
+    width: 30px;
+    height: 30px;
+    background: rgba(157, 80, 235, 0.5);
+    transform: translatex(-45px);
+    border-radius: 60%;
+    margin-top: 10px;
+}
+
+.discover .discover_welcome div{
+    display: flex;
+    align-items: center;
+}
+.discover .discover_welcome strong,
+.discover .discover_welcome p
+{
+    display: flex;
+    align-items: center;
+    transform: translatex(-15px);
+}
+
+
+.discover .discover_welcome strong{
+    font-size: 2rem;
+    margin-right: 50px;
+    color: var(--foreground-secondary);
+}
+.discover .discover_welcome p{
+    color: var(--foreground-secondary);
+}
+.discover .discover_welcome span{
+    font-size: .9rem;
+    color: var(--foreground-tertiary);
+    opacity: .9;
+}
+
+
+
+
+
+
+
+.discover .discover_start{
+    padding: 0 5%;
+}
+.discover .discover_start div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 60px;
+    flex-wrap: wrap;
+    padding: 50px 20px;
+    background: var(--action-tertiary);
+    color: var(--foreground-secondary);
+    border-bottom: 1px solid var(--blue-primary-dark);
+}
+.discover .discover_start div strong{
+    color: var(--foreground-secondary);
+    font-size: 2rem;
+}
+.discover .discover_start div a{
+    font-weight: 600;
+    font-size: .9rem;
+    text-decoration: none;
+    color: var(--foreground-primary);
+    background: var(--blue-primary-dark);
+    padding: 14px 25px;
+    border-radius: 8px;
+    transition: .3s;
+}
+.discover .discover_start div a:hover{
+    opacity: .8;
+}
+
+
+
+
+
+
+
+.discover .discover_column {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column; 
+    padding: 0 5%;
+    width: 100%;
+    margin-top: 50px;
+    border-radius: 14px;
+}
+
+
+
+
+
+
+
+@media (max-width: 1000px){
+    .discover .discover_start div p{
+        display: none;
+    }
+}
+
+@media (max-width: 740px){
+    .discover .discover_welcome span{
+        display: none;
+    }
+}
+@media (max-width: 740px){
+    .discover .discover_start div {
+        flex-direction: column;
+    }
+    .discover .discover_start div a{
+        margin-top: 14px;
+    }
+}
+@media (max-width: 470px){
+    .discover .discover_welcome  {
+        padding: 5%;
+        margin: 0 ;
+        padding-top: 13%;
+    }
+    .discover .discover_welcome div {
+        flex-direction: column;
+    }
+    .discover .discover_welcome div p {
+        transform: translatex(0);
+    }
+}
+@media (max-width: 410px){
+    .discover .discover_start div strong {
+        font-size: 1.5rem;
+    }
+    .discover .discover_start div a {
+        font-size: .8rem;
+        padding: 8px 14px;
+    }
+}
+
+
+/*
+
+SHIMMER EFFECT 
+
+*/
+.discover_course_shimmer {
+    background-image: linear-gradient(
+        -90deg,
+        hsl(218, 23%, 19%) 0%,
+        rgba(157, 80, 235, 0.03) 50%,
+        hsl(218, 23%, 19%) 100%
+    );
+    background-size: 400% 400%;
+    animation: shimmer 1.2s linear infinite;
+    width: 100%;
+    min-height: 200px;
+    border-radius: 8px;
+    margin-bottom: 50px;
+}
+
+@keyframes shimmer {
+    0%{
+        background-position: 0% 0%;
+    }
+    100%{
+        background-position: -135% 0%;
+    }
+}
+

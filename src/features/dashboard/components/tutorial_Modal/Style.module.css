@@ -1,0 +1,92 @@
+.payment_Modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.payment_Modal .form {
+    color: #000;
+    background-color: var(--action-tertiary);
+    width: 50%;
+    padding-block: 30px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5%;
+    box-shadow: 1px 1px 5px #000;
+    position: relative;
+    color: var(--foreground-secondary);
+    text-align: center;
+}
+
+.payment_Modal .form h1 {
+    margin-top: 9px ;
+    margin-bottom: 19px ;
+    color: var(--foreground-primary);
+}
+
+.payment_Modal .form  p{
+    margin-bottom: 20px ;
+    line-height: 25px;
+}
+.payment_Modal .form  .tutorial_buttons{
+    padding-top: 10px;
+    margin: auto;
+}
+.payment_Modal .form  .tutorial_buttons button {
+    padding: 14px 28px;
+    background-color: var(--action-secondary);
+    color: var(--foreground-primary);
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: .5s;
+    margin-right: 14px;
+}
+.payment_Modal .form .tutorial_buttons button:last-child {
+    background: var(--violet);
+}
+.payment_Modal .form .tutorial_buttons button:hover {
+    background: var(--green-primary-dark);
+}
+.payment_Modal .form .tutorial_buttons button:active {
+    background: var(--violet);
+}
+
+
+
+/* mobile */
+
+
+@media (max-width: 1200px) {
+    .payment_Modal .form {
+        width: 70%;
+    }
+}
+@media (max-width: 900px) {
+    .payment_Modal .form {
+        width: 90%;
+    }
+}
+@media (max-width: 600px) {
+    .payment_Modal .form h1 {
+        font-size: 1.5rem;
+    }
+    .payment_Modal .form p {
+        font-size: .9rem;
+    }
+    .payment_Modal .form .tutorial_buttons button {
+        margin-bottom: 15px;
+    }
+    
+}
+

@@ -1,0 +1,104 @@
+
+
+.discover_course {
+    background: var(--action-tertiary);
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+ .discover_course:hover {
+    border: 2px solid var(--blue-primary-dark);
+    cursor: pointer;
+}
+ .discover_course:active {
+    border: none;
+}
+ .discover_course .discover_course_left{
+    width: 50%;
+    margin-right: 50px;
+}
+ .discover_course .discover_course_left .discover_course_left_row{
+    display: flex;
+    align-items: flex-start;
+}
+.discover_course .discover_course_left .discover_course_left_row img{
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    margin-right: 18px;
+}
+.discover_course .discover_course_left .discover_course_left_row span{
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--foreground-secondary);
+}
+.discover_course .discover_course_left .discover_course_left_row p{
+    font-size: .9rem;
+    color: var(--foreground-secondary);
+    margin-top: 18px;
+}
+
+
+
+
+.discover_course_right{
+    width: 45%;
+}
+.discover_course_right p{
+    font-size: .9rem;
+    color: var(--foreground-secondary);
+    margin-bottom: 18px;
+}
+.discover_course_right .discover_course_right_topics{
+    font-size: .9rem;
+    background: var(--action-secondary);
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.discover_course_right .discover_course_right_topics p{
+    font-size: .9rem;
+    color: var(--foreground-secondary);
+    display: block;
+    margin-bottom: 18px;
+    position: relative;
+    margin-left: 20px;
+}
+.discover_course_right .discover_course_right_topics p::after{
+    position: absolute;
+    background: var(--violet);
+    content: '';
+    left: -20px;
+    top: 2px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+
+
+@media (max-width: 800px){
+    .discover_course .discover_course_left{
+        width: 100%;
+    }
+    .discover_course .discover_course_right{
+        display: none;
+    }
+}
+
+
+@media (max-width: 470px){
+    .discover_course .discover_course_left .discover_course_left_row img{
+        width: 70px;
+        height: 70px;
+    }
+    .discover_course .discover_course_left .discover_course_left_row div span{
+        font-size: 1.5rem;
+    }
+}

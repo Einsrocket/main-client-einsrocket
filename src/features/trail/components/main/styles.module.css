@@ -1,0 +1,111 @@
+.trail {
+    width: 100%;
+    padding: 3% 5%;
+    padding-bottom: 100px;
+}
+.trail .trail_module span{
+    font-weight: 600;
+    font-size: 2rem; 
+    color: var(--foreground-secondary);
+    margin-bottom: 14px;
+    display: block;
+}
+.trail .trail_module p{
+    font-size: .9rem; 
+    color: var(--foreground-secondary);
+}
+
+
+.trail .trail_column{
+    margin-top: 70px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.trail .trail_lesson{
+    height: 120px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: 25px;
+    cursor: pointer;
+    border-radius:14px;
+}
+.trail .trail_lesson:hover{
+    border: 1.2px solid var(--blue-primary-dark);
+}
+.trail .trail_lesson_left{
+    border-radius: 14px 0 0 14px;
+    width: 10%;
+    height: 100%;
+    background: hsl(220, 26%, 17%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.trail .trail_lesson_left span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 4px solid var(--blue-primary-dark);
+    color: var(--foreground-primary);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.trail .trail_lesson_right{
+    border-radius: 0 14px 14px 0;
+    width: 90%;
+    height: 100%;
+    background: linear-gradient( to right, hsl(220, 26%, 24%), hsl(220, 26%, 18%) );
+    padding: 30px;
+    overflow: hidden;
+}
+.trail .trail_lesson_right strong{
+    font-size: 1.2rem;
+    color: var(--foreground-secondary);
+}
+.trail .trail_lesson_right p{
+    color: var(--foreground-secondary);
+    margin-top: 18px;
+    font-size: .8rem;
+}
+
+@media (max-width: 1000px){
+    .trail .trail_lesson{
+        /* height: 180px; */
+    }
+}
+@media (max-width: 480px){
+    .trail .trail_lesson_left span{
+        width: 30px;
+        height: 30px;
+        font-size: .9rem;
+    }
+    .trail .trail_lesson_left{
+        align-items: flex-start;
+        width: 20%;
+        padding-top: 30px;
+    }
+    
+}
+@media (max-width: 370px){
+    
+    .trail .trail_lesson_right strong{
+        font-size: 1.2rem
+    }
+}
+@media (max-width: 270px){
+    
+    .trail .trail_lesson_right strong{
+        font-size: 1rem
+    }
+}
+

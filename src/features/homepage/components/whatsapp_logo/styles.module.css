@@ -1,0 +1,31 @@
+.WhatsappLogo_container {
+    width: 5vw;
+    height: 5vw;
+    z-index: 2;
+    position: fixed;
+    bottom: 3vw;
+    right: 3vw;
+    background: var(--green-primary-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s;
+    cursor: pointer;
+}
+.WhatsappLogo_container:hover {
+    opacity: .8;
+}
+
+@media (max-width: 1050px){
+    .WhatsappLogo_container{
+        width: 60px;
+        height: 60px;
+    }
+}
+@media (max-width: 900px){
+    .WhatsappLogo_container{
+        right: 30px;
+        bottom: 50px;
+    }
+}

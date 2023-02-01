@@ -1,0 +1,143 @@
+.quiz {
+    width: 100%;
+    min-height: 100vh;
+    z-index: 1;
+}
+
+.quiz .quiz_parent_conatiner{
+    padding: 0 5%;
+}
+.quiz .quiz_conatiner{
+    width: min(1000px, 100%);
+    margin: 50px auto;
+    background: var(--action-tertiary);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.quiz .quiz_conatiner .quiz_box_left{
+    width: 45%;
+    padding: 20px 30px;
+}
+.quiz .quiz_conatiner .quiz_box_right{
+    padding: 20px 30px;
+    width: 50%;
+}
+
+
+
+
+
+
+
+
+.quiz .quiz_conatiner .quiz_box_left h1{
+    color: var(--foreground-primary);
+    margin-bottom: 5px;
+}
+.quiz .quiz_conatiner .quiz_box_left p{
+    color: var(--foreground-secondary);
+}
+
+
+.quiz .quiz_conatiner .quiz_box_right div{
+    padding: 10px 10px;
+    width: 100%;
+    border: 1px solid var(--blue-primary-dark);
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: var(--foreground-tertiary);
+    font-size: .9rem;
+    cursor: pointer;
+}
+.quiz .quiz_conatiner .quiz_box_right div:hover{
+    border: 1px solid var(--violet);
+}
+.quiz .quiz_conatiner .quiz_box_right button{
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+    height: 40px;
+    width: 100%;
+    background: var(--blue-primary-dark);
+    outline: none;
+    border: none;
+}
+.quiz .quiz_conatiner .quiz_box_right button:hover{
+    opacity: .8;
+}
+.quiz .quiz_conatiner .quiz_box_right button:active{
+    opacity: .4;
+}
+
+
+
+
+
+
+
+
+.quiz .finished{
+    padding: 0 5%;
+    width: 100%;
+}
+.quiz .finished .finished_box{
+    margin-top: 50px;
+    width: 100%;
+    min-height: 200px;
+    padding: 30px;
+    background: var(--action-tertiary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.quiz .finished .finished_box h1{
+    color: var(--foreground-primary);
+    margin-bottom: 14px;
+}
+.quiz .finished .finished_box p{
+    color: var(--foreground-secondary);
+    margin-bottom: 8px;
+}
+.quiz .finished .finished_box p{
+    color: var(--foreground-secondary);
+    margin-bottom: 8px;
+}
+
+.quiz .finished .finished_box button{
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+    height: 40px;
+    background: var(--blue-primary-dark);
+    outline: none;
+    border: none;
+    color: #eee;
+    padding: 0 40px;
+    transition: .5s;
+}
+.quiz .finished .finished_box button:hover{
+    scale: 1.3;
+}
+.quiz .finished .finished_box button:active{
+    opacity: .5;
+}
+
+
+
+@media (max-width: 790px){
+    .quiz .quiz_conatiner .quiz_box_left,
+    .quiz .quiz_conatiner .quiz_box_right{
+        width: 100%;
+    }
+     
+}
+
+
+
+
+
+
+
+

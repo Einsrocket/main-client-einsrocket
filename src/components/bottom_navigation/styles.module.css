@@ -1,0 +1,40 @@
+.bottom_navigation {
+    z-index: 10;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    padding: 5px 25px;
+    height: 70px;
+    background-color: var(--action-tertiary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    border-top: 1px solid var(--background-secondary);
+}
+
+.bottom_navigation button{
+    background: none;
+    border: none;
+}
+.bottom_navigation button svg{
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+.bottom_navigation button span{
+    display: block;
+    font-size: .8rem;
+    color: rgb(255, 223, 44);
+}
+
+
+
+
+
+
+@media (min-width: 450px){
+    .bottom_navigation  {
+        display: none;
+    }
+}
