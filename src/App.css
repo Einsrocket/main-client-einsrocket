@@ -8,7 +8,7 @@
 
     --action-primary: hsl(216, 15%, 52%);
     --action-secondary: hsl(218, 23%, 23%);
-    --action-tertiary: hsl(225, 17%, 17%);
+    --action-tertiary: rgb(32, 32, 36);
 
     --foreground-primary: hsl(210, 38%, 95%);
     --foreground-secondary: hsl(211, 25%, 84%);

@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import {
-    PaperPlaneTilt,
     HeartStraight,
     ChatCircleText,
     Play,
@@ -9,22 +8,19 @@ import {
     CornersOut,
 } from "phosphor-react";
 
-import { Comment } from "../comment/Index";
 import { MenuModal } from "../../../../components/Modals/payment_Modal/Index.jsx";
 import style from "./styles.module.css";
 import VV from "./e.mp4";
+import { RightDiv } from "../right_div/Index";
+import { Comments } from "../comments/Index";
 
 export function LessonContainer() {
     const { id } = useParams();
     const navigate = useNavigate();
     const [lesson, setLesson] = useState([]);
-    const [lessonsList, setLessonsList] = useState([]);
-    const [commentList, setCommentList] = useState([]);
     var [areCommentsVisible, setAreCommentsVisible] = useState(false);
     var [isLiked, setIsLiked] = useState(false);
     var [lessonLikes, setLessonLikes] = useState();
-    var [lessonComments, setLessonComments] = useState();
-    var [input, setInput] = useState("");
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [showQuizButton, setShowQuizButton] = useState(false);
     const [quizQuestions, setQuizQuestions] = useState([]);
@@ -100,17 +96,6 @@ export function LessonContainer() {
             {}
         );
 
-    async function getLessons(course_name) {
-        let trailName = await course_name;
-
-        await fetch(`${cookies?.__server}/lessons/get/${trailName}`)
-            .then((res) => res.json())
-            .then((data) => {
-                setLessonsList(data.result);
-            })
-            .catch((err) => console.log(err));
-    }
-
     async function getLesson() {
         let lessonId = await id;
 
@@ -118,27 +103,8 @@ export function LessonContainer() {
             .then((res) => res.json())
             .then((data) => {
                 setLesson(data.result);
-                getLessons(data.result.course_name);
+                // console.log(data.result);
                 setLessonLikes(data.result.likes);
-                setLessonComments(data.result.comments);
-            })
-            .catch((err) => console.log(err));
-    }
-
-    async function getComments() {
-        let lessonId = await id;
-        let server_url = cookies?.__server;
-
-        await fetch(`${server_url}/lessons/get_by_id`, {
-            method: "POST",
-            body: JSON.stringify({ lesson_id: lessonId }),
-            headers: {
-                "Content-Type": "application/json",
-            },
-        })
-            .then((res) => res.json())
-            .then((data) => {
-                setCommentList(data.result.reverse());
             })
             .catch((err) => console.log(err));
     }
@@ -165,36 +131,6 @@ export function LessonContainer() {
             })
             .catch((err) => console.log(err));
     }
-
-    //handles comment adding
-    const handleCommentAdding = async () => {
-        // values to submit when adding a comment
-        const values = {
-            author: cookies?.__username,
-            lesson_id: id,
-            description: input,
-        };
-        let server_url = cookies?.__server;
-
-        input &&
-            (await fetch(`${server_url}/lessons/add_comment/`, {
-                method: "POST",
-                body: JSON.stringify(values),
-                headers: {
-                    "Content-Type": "application/json",
-                },
-            })
-                .then((res) => res.json())
-                .then((data) => {
-                    // console.log(data);
-                })
-                .catch((err) => console.log(err)));
-
-        /*refresh the comment list*/
-        getComments();
-
-        setInput("");
-    };
 
     //handles like adding
     const handleLikesAdding = async () => {
@@ -282,7 +218,6 @@ export function LessonContainer() {
     useEffect(() => {
         getLesson();
         check_if_user_is_allowed();
-        getComments();
         checkIfLiked();
         check_if_user_made_quiz();
     }, []);
@@ -407,6 +342,7 @@ export function LessonContainer() {
                                         lessonLikes + lesson?.comments}
                                 </span>
                             </div>
+
                             <div>
                                 <small>{lesson?.comments} Comentarios </small>
                                 <small style={{ marginLeft: 10 }}>
@@ -450,83 +386,15 @@ export function LessonContainer() {
                             </button>
                         </div>
 
-                        <div
-                            className={
-                                areCommentsVisible
-                                    ? style.add_comments_container
-                                    : style.add_comments_container_none_display
-                            }
-                        >
-                            <div className={style.add_comments}>
-                                <div>
-                                    <input
-                                        type="text"
-                                        placeholder="Adicionar comentario"
-                                        value={input}
-                                        onChange={(e) =>
-                                            setInput(e.target.value)
-                                        }
-                                        onKeyDown={(e) => {
-                                            if (e.key === "Enter") {
-                                                input !== "" &&
-                                                    handleCommentAdding();
-                                            }
-                                        }}
-                                    />
-                                    <button
-                                        onClick={() => handleCommentAdding()}
-                                    >
-                                        <PaperPlaneTilt
-                                            color="hsl(214, 20%, 69%)"
-                                            size={30}
-                                        />
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div className={style.post_comments}>
-                                {commentList &&
-                                    commentList.map((value) => {
-                                        return (
-                                            <Comment
-                                                key={value.id}
-                                                value={value}
-                                            />
-                                        );
-                                    })}
-                            </div>
-                        </div>
-
-                        {/* csmmsdm */}
+                        <Comments
+                            id={id}
+                            lesson={lesson}
+                            areCommentsVisible={areCommentsVisible}
+                            setLesson={setLesson}
+                        />
                     </div>
-                    <div className={style.lesson_module_right}>
-                        <h4>Cronograma das aulas</h4>
-                        <div className={style.lesson_module_right_playlist}>
-                            {lessonsList &&
-                                lessonsList.map((value) => {
-                                    return (
-                                        <a
-                                            key={value.id}
-                                            href={`/discover/lesson/${value.id}`}
-                                        >
-                                            <div
-                                                className={
-                                                    style.lesson_module_right_playlist_lesson
-                                                }
-                                            >
-                                                <div>
-                                                    <span>
-                                                        AULA{" "}
-                                                        {value.lesson_number}
-                                                    </span>
-                                                    <span>VIDEO</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    );
-                                })}
-                        </div>
-                    </div>
+
+                    <RightDiv id={id} />
                 </div>
             )}
 

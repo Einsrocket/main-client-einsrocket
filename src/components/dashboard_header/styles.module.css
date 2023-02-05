@@ -3,11 +3,11 @@
     position: sticky;
     top: 0px;
     width: 100%;
-    padding: .8% 5%;
+    padding: 15px 5%;
     background: var(--action-tertiary);
 }
 
-.main_header nav{
+.main_header nav {
     position: sticky;
     top: 0px;
     width: 100%;
@@ -19,82 +19,80 @@
     display: flex;
     align-items: center;
 }
-.main_header nav .logo_container img{
+.main_header nav .logo_container img {
     width: 40px;
     height: 40px;
     margin-right: 8px;
 }
-.main_header nav .logo_container span{
-    font-size: 1.5vw;
+.main_header nav .logo_container span {
+    font-size: 1.3rem;
     font-weight: 600;
     color: var(--foreground-primary);
 }
 
-.main_header nav .auth_links
- {
+.main_header nav .auth_links {
     display: flex;
     align-items: center;
 }
-.main_header nav .auth_links a{
+.main_header nav .auth_links a {
     text-decoration: none;
     color: var(--foreground-primary);
-    font-size: .7vw;
+    font-size: 0.85rem;
     font-weight: 500;
-    transition: .5s;
+    transition: 0.5s;
     margin-right: 18px;
     padding: 20px 14px;
     display: block;
     border-bottom: 3px solid transparent;
 }
-.main_header nav .auth_links a svg{
+.main_header nav .auth_links a svg {
     margin-right: 5px;
 }
-.main_header nav .auth_links .profile_link{
-    background:  var(--violet);
+.main_header nav .auth_links .profile_link {
+    background: var(--violet);
     color: var(--foreground-primary);
     border: 2px solid var(--action-tertiary);
     outline: 2px solid var(--foreground-primary);
-    width:30px;
-    height:30px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: .7rem;
+    font-size: 0.8rem;
     font-weight: 500;
     display: none;
 }
-.main_header nav .auth_links a:hover{
+.main_header nav .auth_links a:hover {
     border-bottom: 3px solid var(--violet);
-    color:var(--violet);
+    color: var(--violet);
 }
-.main_header nav .auth_links a:last-child:hover{
-    background:  var(--violet);
+.main_header nav .auth_links a:last-child:hover {
+    background: var(--violet);
     color: var(--foreground-primary);
 }
-.main_header nav .auth_links div{
-    font-size: .7rem;
+.main_header nav .auth_links div {
+    font-size: 0.7rem;
     font-weight: 500;
-    background:  var(--violet);
+    background: var(--violet);
     color: var(--foreground-primary);
     border: 2px solid var(--action-tertiary);
     outline: 2px solid var(--foreground-primary);
-    width:40px;
-    height:40px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
 }
-.main_header nav .auth_links div:hover{
-    opacity: .9;
+.main_header nav .auth_links div:hover {
+    opacity: 0.9;
 }
-.main_header nav .auth_links div:active{
+.main_header nav .auth_links div:active {
     opacity: 1;
 }
-
 
 /***
 
@@ -111,14 +109,13 @@
 
 mobile
 */
-.main_header nav .mobile_auth_links
- {
+.main_header nav .mobile_auth_links {
     display: flex;
     flex-direction: column;
     background: var(--background-primary);
     align-items: flex-start;
     justify-content: flex-start;
-    width: 50%;
+    width: 70%;
     height: 100%;
     position: fixed;
     top: 0;
@@ -126,81 +123,72 @@ mobile
     padding: 5px 14px;
 }
 
-
-.main_header nav .mobile_auth_links a{
+.main_header nav .mobile_auth_links a {
     display: inline-flex;
     align-items: center;
     text-decoration: none;
-    color: var(--foreground-primary);
-    font-size: 1.9vw;
+    color: var(--violet);
+    font-size: 0.9rem;
     font-weight: 500;
-    transition: .5s;
+    transition: 0.5s;
     align-self: flex-start;
     float: left;
     margin: 8px 0;
 }
 
-.main_header nav .mobile_auth_links a svg{
+.main_header nav .mobile_auth_links a svg {
     margin-right: 5px;
 }
 
-.main_header nav .mobile_auth_links a:last-child{
+.main_header nav .mobile_auth_links a:last-child {
     padding: 8px 24px;
     border: 1px solid var(--violet);
     border-radius: 4px;
-}
-
-.main_header nav .mobile_auth_links a:hover{
-    color:var(--violet);
-}
-
-.main_header nav .mobile_auth_links a:last-child:hover{
-    background:  var(--violet);
     color: var(--foreground-primary);
 }
 
+.main_header nav .mobile_auth_links a:hover {
+    color: var(--violet);
+}
+
+.main_header nav .mobile_auth_links a:last-child:hover {
+    background: var(--violet);
+}
 
 .main_header nav button {
     display: none;
 }
 
-
-@media (min-width: 500px){
+@media (min-width: 500px) {
     .main_header nav .mobile_auth_links {
         display: none;
     }
 }
-@media (max-width: 1200px){
-    .main_header nav .auth_links a{
-        font-size: .9vw;
-    }
+@media (max-width: 1200px) {
 }
-@media (max-width: 750px){
+@media (max-width: 750px) {
     .main_header nav .logo_container span {
         display: none;
     }
-    .main_header nav .auth_links a{
-        font-size: 1.2vw;
-    }
-    .main_header nav .auth_links a:last-child{
+
+    .main_header nav .auth_links a:last-child {
         margin-left: 24px;
     }
 }
-@media (max-width: 500px){
+@media (max-width: 500px) {
     .main_header nav .auth_links a,
-    .main_header nav .auth_links div
-    {
+    .main_header nav .auth_links div {
         display: none;
     }
-    .main_header nav .auth_links .profile_link{
+    .main_header nav .auth_links .profile_link {
         display: flex;
         margin: 8px 0;
     }
     .main_header nav button {
         display: inline;
     }
-    
-    .main_header nav .logo_container img{
+
+    .main_header nav .logo_container img {
         display: none;
     }
     .main_header nav .logo_container span {
@@ -211,12 +199,4 @@ mobile
         border: none;
         z-index: 3;
     }
-
-    
 }
-
-
-
-
-
-

@@ -1,0 +1,81 @@
+.lesson_module_right {
+    flex-basis: 35%;
+    height: 520px;
+    overflow: hidden;
+    background-color: rgb(41, 41, 46);
+    border-radius: 10px;
+}
+
+.lesson_module_right h4 {
+    color: var(--foreground-secondary);
+    padding: 30px;
+}
+.lesson_module_right .lesson_module_right_playlist {
+    height: 500px;
+    overflow: hidden;
+    overflow-y: scroll;
+    width: 100%;
+    background-color: rgb(25, 25, 28);
+    border-radius: 10px;
+}
+.lesson_module_right .lesson_module_right_playlist a {
+    color: rgb(4, 211, 97);
+    text-decoration: none;
+}
+.lesson_module_right .lesson_module_right_playlist::-webkit-scrollbar {
+    background: var(--outline);
+    width: 5px;
+}
+.lesson
+    .lesson_module_right
+    .lesson_module_right_playlist::-webkit-scrollbar-thumb {
+    background: hsl(229, 76%, 66%);
+    border-radius: 15px;
+}
+.lesson_module_right .lesson_module_right_playlist_lesson {
+    /* border: 1px solid rgba(84, 230, 140, 0.05); */
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    margin-right: 0;
+}
+.lesson_module_right .lesson_module_right_playlist_lesson:hover {
+    background: rgba(84, 230, 140, 0.1);
+    background: rgb(25, 25, 28);
+}
+.lesson_module_right .lesson_module_right_playlist_lesson div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.lesson
+    .lesson_module_right
+    .lesson_module_right_playlist_lesson
+    div
+    span:first-child {
+    color: var(--foreground-secondary);
+    font-size: 0.8rem;
+}
+.lesson
+    .lesson_module_right
+    .lesson_module_right_playlist_lesson
+    div
+    span:last-child {
+    color: var(--green-primary-dark);
+    border: 1px solid var(--green-primary-dark);
+    padding: 5px 14px;
+    font-size: 0.6rem;
+}
+.lesson_module_right .lesson_module_right_playlist_lesson p {
+    color: var(--foreground-secondary);
+    margin-top: 8px;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 1060px) {
+    .lesson_module_right {
+        flex-basis: 100%;
+        margin-top: 30px;
+    }
+}
