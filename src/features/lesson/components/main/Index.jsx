@@ -6,6 +6,7 @@ import {
     ChatCircleText,
     Play,
     Pause,
+    CornersOut,
 } from "phosphor-react";
 
 import { Comment } from "../comment/Index";
@@ -31,6 +32,7 @@ export function LessonContainer() {
     const [playerState, setPlayerState] = useState({
         playing: false,
         percentage: 0,
+        fullscreen: false,
     });
     const videoRef = useRef();
 
@@ -62,6 +64,26 @@ export function LessonContainer() {
         setPlayerState({
             ...playerState,
             percentage: currentPercentage,
+        });
+    }
+    async function handleChangeVideoFullscreen() {
+        if (playerState.fullscreen === false) {
+            videoRef.current.requestFullscreen();
+        } else {
+            if (videoRef.current.exitFullscreen) {
+                videoRef.current.exitFullscreen();
+            } else if (videoRef.current.webkitExitFullscreen) {
+                /* Safari */
+                videoRef.current.webkitExitFullscreen();
+            } else if (videoRef.current.msExitFullscreen) {
+                /* IE11 */
+                videoRef.current.msExitFullscreen();
+            }
+        }
+
+        setPlayerState({
+            ...playerState,
+            fullscreen: !playerState.fullscreen,
         });
     }
 
@@ -280,8 +302,11 @@ export function LessonContainer() {
                                     ref={videoRef}
                                     src={VV}
                                     // src={lesson?.video}
-                                    onTimeUpdate={(e) => {
+                                    onTimeUpdate={() => {
                                         handleVideoTimeUpdate();
+                                    }}
+                                    onClick={() => {
+                                        handleChangeVideoFullscreen();
                                     }}
                                 ></video>
                                 {!playerState.playing && (
@@ -313,6 +338,17 @@ export function LessonContainer() {
                                         handleChangeVideoPercentage(e);
                                     }}
                                 />
+                                <button
+                                    onClick={() =>
+                                        handleChangeVideoFullscreen()
+                                    }
+                                >
+                                    <CornersOut
+                                        color="rgb(255,255,255)"
+                                        weight="fill"
+                                        size={30}
+                                    />
+                                </button>
                             </div>
                         </div>
                         <h4>
