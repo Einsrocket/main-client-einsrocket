@@ -227,8 +227,7 @@ export function LessonContainer() {
             <br />
             {/* <h1>Discover - Trail</h1> */}
 
-            {/* {lesson.length !== 0 && ( */}
-            {1 !== 0 && (
+             {lesson.length !== 0 && ( 
                 <div className={style.lesson_module}>
                     <div className={style.lesson_module_left}>
                         <div className={style.video_wrapper}>
