@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { MenuModal } from "../Modals/Menu_Modal/Index.jsx";
 import { List, User, XCircle } from "phosphor-react";
+import ICON from "./icon.png";
 
 import style from "./styles.module.css";
 
@@ -31,7 +32,7 @@ export function DashboardHeader() {
         <header className={style.main_header}>
             <nav>
                 <div className={style.logo_container}>
-                    <img src="icon.png" alt=""></img>
+                    <img src={ICON} alt=""></img>
                     <span>EINSROCKET</span>
                     {!isMenuVisible ? (
                         <button onClick={() => setIsMenuVisible(true)}>

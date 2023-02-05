@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import style from "./styles.module.css";
 
-import { DashboardHeader } from "../../../../components/dashboard_header/Index";
 import { DiscoverCourse } from "../course/Index";
 import { MenuModal } from "../../../../components/Modals/payment_Modal/Index.jsx";
 
@@ -50,8 +49,6 @@ export function DiscoverContainer() {
 
     return (
         <div className={style.discover}>
-            <DashboardHeader />
-
             <div className={style.discover_welcome}>
                 <div>
                     <span className={style.discover_welcome_co}></span>
