@@ -13,28 +13,23 @@
     border-top: 1px solid var(--background-secondary);
 }
 
-.bottom_navigation button{
+.bottom_navigation button {
     background: none;
     border: none;
 }
-.bottom_navigation button svg{
+.bottom_navigation button svg {
     width: 25px;
     height: 25px;
     object-fit: contain;
 }
-.bottom_navigation button span{
+.bottom_navigation button span {
     display: block;
-    font-size: .8rem;
+    font-size: 0.8rem;
     color: rgb(255, 223, 44);
 }
 
-
-
-
-
-
-@media (min-width: 450px){
-    .bottom_navigation  {
+@media (min-width: 450px) {
+    .bottom_navigation {
         display: none;
     }
 }

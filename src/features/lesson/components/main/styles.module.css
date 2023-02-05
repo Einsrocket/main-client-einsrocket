@@ -3,10 +3,10 @@
     padding: 50px 5%;
     padding-bottom: 100px;
 }
-.lesson h1{
+.lesson h1 {
     color: var(--foreground-secondary);
     display: block;
-    margin-bottom:  20px;
+    margin-bottom: 20px;
     text-align: center;
 }
 .lesson .lesson_module {
@@ -26,21 +26,75 @@
 .lesson .lesson_module_right {
     width: 25%;
     height: 560px;
-    background: hsl(220, 26%, 19%);
     overflow: hidden;
 }
 
-
-.lesson .lesson_module_left video{
-    margin-top:  10px;
+.lesson .lesson_module_left .video_wrapper video {
+    margin-top: 10px;
     outline: none;
     width: 100%;
     max-height: 500px;
 }
-.lesson .lesson_module_left h4{
+.lesson .lesson_module_left .video_wrapper div:first-child {
+    width: 100%;
+    background-color: #202024;
+    padding-top: 10px;
+    position: relative;
+}
+
+.lesson .lesson_module_left .video_wrapper div:last-child {
+    width: 100%;
+    height: 50px;
+    background-color: #202024;
+    transform: translateY(-20px);
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 0 10px;
+}
+.lesson .lesson_module_left .video_wrapper div:last-child input {
+    width: 100%;
+}
+.lesson .lesson_module_left h4 {
     color: var(--foreground-secondary);
     margin: 14px;
 }
+.lesson .lesson_module_left .video_wrapper div:first-child button {
+    background-color: #2020245e;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid rgb(255, 255, 255);
+    cursor: pointer;
+    transition: 1s;
+}
+.lesson .lesson_module_left .video_wrapper div:last-child button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: 1s;
+}
+.lesson .lesson_module_left .video_wrapper div:first-child button:hover,
+.lesson .lesson_module_left .video_wrapper div:last-child button:hover {
+    background-color: #2020249c;
+    opacity: 0.8;
+}
+/* 
+
+
+
+
+
+
+
+
+
+
+l*/
 
 .lesson .lesson_module_left .lesson_module_left_description_row {
     display: flex;
@@ -50,14 +104,14 @@
     margin-top: 14px;
     margin-left: 14px;
 }
-.lesson .lesson_module_left .lesson_module_left_description_row p{
-    font-size: .9rem; 
+.lesson .lesson_module_left .lesson_module_left_description_row p {
+    font-size: 0.9rem;
     color: var(--foreground-tertiary);
     margin-bottom: 14px;
     flex-basis: 100%;
 }
-.lesson .lesson_module_left .lesson_module_left_description_row button{
-    font-size: .9rem; 
+.lesson .lesson_module_left .lesson_module_left_description_row button {
+    font-size: 0.9rem;
     background: var(--violet);
     color: #eee;
     margin: 14px 0;
@@ -66,18 +120,12 @@
     border: none;
     border-radius: 3px;
 }
-.lesson .lesson_module_left .lesson_module_left_description_row button:hover{
-    opacity: .8;
+.lesson .lesson_module_left .lesson_module_left_description_row button:hover {
+    opacity: 0.8;
 }
-.lesson .lesson_module_left .lesson_module_left_description_row button:active{
-    opacity: .4;
+.lesson .lesson_module_left .lesson_module_left_description_row button:active {
+    opacity: 0.4;
 }
-
-
-
-
-
-
 
 .lesson .lesson_module_left .lesson_module_left_row {
     display: flex;
@@ -85,24 +133,23 @@
     margin-top: 14px;
     margin-left: 14px;
 }
-.lesson .lesson_module_left .lesson_module_left_row img{
+.lesson .lesson_module_left .lesson_module_left_row img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     margin-right: 8px;
     border: 2px solid var(--foreground-tertiary);
 }
-.lesson .lesson_module_left .lesson_module_left_row div span{
+.lesson .lesson_module_left .lesson_module_left_row div span {
     display: block;
     color: var(--foreground-tertiary);
-    font-size: .8rem;
+    font-size: 0.8rem;
 }
-.lesson .lesson_module_left .lesson_module_left_row div span:first-child{
+.lesson .lesson_module_left .lesson_module_left_row div span:first-child {
     color: var(--foreground-secondary);
     font-weight: 600;
     margin-bottom: 4px;
 }
-
 
 /*
 
@@ -148,10 +195,6 @@
 
 */
 
-
-
-
-
 /*
 
 
@@ -159,8 +202,6 @@
 
 
 */
-
-
 
 .lesson .lesson_module_left .post_footer_row_container {
     display: flex;
@@ -184,21 +225,19 @@
     justify-content: center;
     margin-right: 10px;
     cursor: pointer;
-    background: rgba(84, 230, 140, 0.05);
+    background: rgb(25, 25, 28);
 }
-.lesson .lesson_module_left .post_footer_row_container button:last-child {
-}
+
 .lesson .lesson_module_left .post_footer_row_container button:hover {
-    background: rgba(157, 80, 235, 0.08);
+    opacity: 0.5;
 }
 .lesson .lesson_module_left .post_footer_row_container button:active {
-    background: var(--main-white-light-outline);
+    background: rgb(25, 25, 28);
 }
 .lesson .lesson_module_left .post_footer_row_container span {
     margin-left: 4px;
     color: var(--foreground-tertiary);
 }
-
 
 /*
 
@@ -208,28 +247,26 @@
 
 */
 
-
-
 /*
 
 
 
 
 .*/
- .add_comments_container_none_display {
+.add_comments_container_none_display {
     display: none;
 }
- .add_comments_container {
+.add_comments_container {
     padding: 14px;
-    background: hsl(220, 26%, 19%);
+    background-color: rgb(25, 25, 28);
 }
- .add_comments_container .add_comments {
+.add_comments_container .add_comments {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
- .add_comments_container .add_comments div {
+.add_comments_container .add_comments div {
     flex-basis: 100%;
     display: flex;
     align-items: center;
@@ -238,7 +275,7 @@
     padding: 8px;
     border-radius: 20px;
 }
- .add_comments_container .add_comments input {
+.add_comments_container .add_comments input {
     flex-basis: 92%;
     height: 100%;
     border: none;
@@ -246,19 +283,19 @@
     background: none;
     color: var(--foreground-tertiary);
 }
- .add_comments_container .add_comments input::placeholder {
+.add_comments_container .add_comments input::placeholder {
     color: var(--gray-outline);
 }
- .add_comments_container .add_comments button {
+.add_comments_container .add_comments button {
     border: none;
     outline: none;
     background: none;
 }
- .add_comments_container .add_comments button:hover {
+.add_comments_container .add_comments button:hover {
     opacity: 0.8;
 }
 
- .post_comments {
+.post_comments {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -276,6 +313,7 @@
     background: hsl(229, 76%, 66%);
     border-radius: 15px;
 }
+/*
 
 
 
@@ -295,6 +333,18 @@
 
 
 
+
+
+
+
+
+
+l
+*/
+
+.lesson .lesson_module_right {
+    background-color: rgb(41, 41, 46);
+}
 .lesson .lesson_module_right h4 {
     color: var(--foreground-secondary);
     padding: 18px;
@@ -304,51 +354,61 @@
     overflow: hidden;
     overflow-y: scroll;
     width: 100%;
+    background-color: rgb(25, 25, 28);
 }
 .lesson .lesson_module_right .lesson_module_right_playlist::-webkit-scrollbar {
-    background: var(--outline);
+    /* background: var(--outline); */
     width: 5px;
 }
-.lesson .lesson_module_right .lesson_module_right_playlist::-webkit-scrollbar-thumb {
-    background: hsl(229, 76%, 66%);
+.lesson
+    .lesson_module_right
+    .lesson_module_right_playlist::-webkit-scrollbar-thumb {
+    /* background: hsl(229, 76%, 66%); */
+    background: red;
     border-radius: 15px;
 }
-.lesson .lesson_module_right .lesson_module_right_playlist_lesson{
-    border: 1px solid rgba(84, 230, 140, 0.05);
+.lesson .lesson_module_right .lesson_module_right_playlist_lesson {
+    /* border: 1px solid rgba(84, 230, 140, 0.05); */
     cursor: pointer;
     padding: 18px;
     width: 100%;
     margin-right: 0;
 }
-.lesson .lesson_module_right .lesson_module_right_playlist_lesson:hover{
-    background:  rgba(84, 230, 140, 0.1);
+.lesson .lesson_module_right .lesson_module_right_playlist_lesson:hover {
+    /* background: rgba(84, 230, 140, 0.1); */
+    /* background: rgb(25, 25, 28); */
 }
-.lesson .lesson_module_right .lesson_module_right_playlist_lesson div{
+.lesson .lesson_module_right .lesson_module_right_playlist_lesson div {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
 }
-.lesson .lesson_module_right .lesson_module_right_playlist_lesson div span:first-child{
+.lesson
+    .lesson_module_right
+    .lesson_module_right_playlist_lesson
+    div
+    span:first-child {
     color: var(--foreground-secondary);
-    font-size: .8rem;
+    font-size: 0.8rem;
 }
-.lesson .lesson_module_right .lesson_module_right_playlist_lesson div span:last-child{
+.lesson
+    .lesson_module_right
+    .lesson_module_right_playlist_lesson
+    div
+    span:last-child {
     color: var(--green-primary-dark);
     border: 1px solid var(--green-primary-dark);
     padding: 5px 14px;
-    font-size: .6rem;
+    font-size: 0.6rem;
 }
-.lesson .lesson_module_right .lesson_module_right_playlist_lesson p{
+.lesson .lesson_module_right .lesson_module_right_playlist_lesson p {
     color: var(--foreground-secondary);
     margin-top: 8px;
-    font-size: .8rem;
-    background: red;
+    font-size: 0.8rem;
 }
 
-
-
-@media (max-width: 1150px){
+@media (max-width: 1150px) {
     .lesson .lesson_module_left {
         flex-basis: 60%;
     }
@@ -356,7 +416,7 @@
         flex-basis: 35%;
     }
 }
-@media (max-width: 1050px){
+@media (max-width: 1050px) {
     .lesson .lesson_module_left {
         flex-basis: 65%;
     }
@@ -364,9 +424,9 @@
         flex-basis: 25%;
     }
 }
-@media (max-width: 950px){
-    .lesson{
-        padding: 0 ;
+@media (max-width: 950px) {
+    .lesson {
+        padding: 0;
         padding-bottom: 100px;
     }
     .lesson .lesson_module {
@@ -382,7 +442,7 @@
         margin-top: 30px;
     }
 }
-@media (max-width: 660px){
+@media (max-width: 660px) {
     .lesson .lesson_module_left .post_footer_likesrow_container {
         flex-direction: column;
         align-items: flex-start;
@@ -393,10 +453,8 @@
         display: block;
     }
 }
-@media (max-width: 530px){
-    .lesson .lesson_module_left .lesson_module_left_description_row  div {
+@media (max-width: 530px) {
+    .lesson .lesson_module_left .lesson_module_left_description_row div {
         width: 60%;
     }
 }
-
-
