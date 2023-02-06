@@ -12,6 +12,7 @@ import { Profile } from "../pages/Profile";
 import { Onboarding } from "../pages/Onboarding";
 import { Quizpage } from "../pages/Quiz";
 import { Redirect } from "./Redirect";
+import { ResetPassword } from "../pages/ResetPassword";
 
 export function Router() {
     return (
@@ -28,6 +29,7 @@ export function Router() {
                     />
                     <Route path="/signup" element={<Register />} />
                     <Route path="/signin" element={<Login />} />
+                    <Route path="/reset_password" element={<ResetPassword />} />
 
                     <Route
                         path="/quiz"

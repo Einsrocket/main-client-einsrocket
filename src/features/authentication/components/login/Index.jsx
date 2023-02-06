@@ -127,6 +127,9 @@ export function LoginContainer() {
                         <p>
                             Não tem uma conta? <a href="/signup">Registe-se</a>.
                         </p>
+                        <p>
+                            <a href="/reset_password">Esqueci minha senha</a>.
+                        </p>
                         {!isLoading && <button>LOGIN</button>}
                         {isLoading && (
                             <button className={style.loading_button}>

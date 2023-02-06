@@ -33,6 +33,17 @@ export function RegisterContainer() {
             email,
         };
 
+        if (password.length < 8) {
+            Swal.fire({
+                title: "ALERTA!",
+                text: "A palavra passe tem que ter no minimo 8 caracteres",
+                icon: "warning",
+                confirmButtonText: "OK",
+            });
+
+            return;
+        }
+
         if (isLoading === false) {
             setIsLoading(true);
 

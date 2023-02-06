@@ -38,7 +38,7 @@
     display: inline-flex;
     align-items: center;
     text-decoration: none;
-    color: var(--foreground-primary);
+    color: var(--violet);
     font-size: 0.85rem;
     font-weight: 500;
     transition: 0.5s;
