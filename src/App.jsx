@@ -8,8 +8,8 @@ import "./App.css";
 
 function App() {
     const [endAnimation, setEndAnimation] = useState(false);
-    // document.cookie = "__server=https://einsrocket-server.cyclic.app";
-    document.cookie = "__server=http://localhost:3001";
+    document.cookie = "__server=https://einsrocket-server.cyclic.app";
+    // document.cookie = "__server=http://localhost:3001";
 
     var cookies = document.cookie
         .split(";")
