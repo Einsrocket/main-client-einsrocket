@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 export function LoginContainer() {
     const navigate = useNavigate();
     const [password, setPassword] = useState("");
-    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
     const [isLoading, setIsLoading] = useState(false);
 
@@ -26,7 +26,7 @@ export function LoginContainer() {
         setMessage("");
 
         const uploadDataObject = {
-            username,
+            email,
             password,
         };
 
@@ -50,20 +50,20 @@ export function LoginContainer() {
                             confirmButtonText: "OK",
                         });
                     }
-                    // console.log(data)
+                    // console.log(data);
 
                     if (data.succes) {
                         //creating user sigla
-                        let i = username.split("");
+                        let i = data.userData.username.split("");
                         for (let index = 0; index < i.length; index++) {
                             if (i[index] == " ") {
-                                let b = username.split(" ");
+                                let b = data.userData.username.split(" ");
                                 document.cookie = `__sigla=${
                                     b[0].split("")[0]
                                 }`;
                                 break;
                             } else {
-                                let b = username.split("");
+                                let b = data.userData.username.split("");
                                 document.cookie = `__sigla=${
                                     b[0].split("")[0]
                                 }`;
@@ -71,7 +71,7 @@ export function LoginContainer() {
                         }
 
                         document.cookie = `__token=${data.token}`;
-                        document.cookie = `__username=${username}`;
+                        document.cookie = `__username=${data.userData.username}`;
                         document.cookie = "__loggedIn=true";
                         document.cookie = `__userid=${data.userData.id}`;
 
@@ -109,9 +109,9 @@ export function LoginContainer() {
                         <h1>FAÇA LOGIN</h1>
                         <input
                             required
-                            onChange={(e) => setUsername(e.target.value)}
-                            type="text"
-                            placeholder="Seu nome"
+                            onChange={(e) => setEmail(e.target.value)}
+                            type="email"
+                            placeholder="Seu email"
                         />
                         <input
                             required
